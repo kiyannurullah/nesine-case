@@ -1,7 +1,7 @@
 function Program({ bulletin }) {
   console.log(bulletin);
   return (
-    <div>
+    <div className="program">
       {Object.values(bulletin)?.map((item) => (
         <div key={item?.C}>
           {item?.N}

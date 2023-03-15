@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import AppStore from '../utils/context';
+import '../styles/globals.scss';
 
 function App({ Component, pageProps }) {
   return (
