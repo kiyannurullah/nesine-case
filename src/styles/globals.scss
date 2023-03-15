@@ -4,6 +4,15 @@ body {
   margin: 0;
 }
 
+.container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+
 @import "components/program";
 @import "components/event";
 @import "components/oddHeader";

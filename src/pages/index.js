@@ -9,11 +9,11 @@ function HomePage(props) {
   const { context } = useProgramContext();
 
   return (
-    <>
-      <OddHeader />
+    <div className="container">
+      <OddHeader isCount />
       <Program bulletin={props?.Events} />
       <Slip />
-    </>
+    </div>
   );
 }
 

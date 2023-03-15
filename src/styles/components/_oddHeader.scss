@@ -1,0 +1,23 @@
+.oddHeader {
+  &__list {
+    list-style: none;
+    border-left: 1px solid rgb(52, 55, 59);
+    display: flex;
+
+    li {
+      align-items: center;
+      border-right: 1px solid rgb(52, 55, 59);
+      display: flex;
+      font-size: 11px;
+      font-weight: 700;
+      justify-content: center;
+      text-align: center;
+      width: 45px;
+
+      &:first-child {
+        width: 30%;
+      }
+    }
+  }
+}
+
