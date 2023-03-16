@@ -1,9 +1,9 @@
 import { result } from '../../utils/config';
-import Odd from '../Odd';
+import OddWrapper from '../OddWrapper';
 
 function Event({ item, index }) {
   return (
-    <div key={item?.key} className="program__market">
+    <div className="program__market">
       <div className="program__event__info">
         {index}
         {' '}
@@ -24,7 +24,7 @@ function Event({ item, index }) {
           return (
             <div key={ocgKey} className="program__market__item">
               <div className="program__market__item__title">{ocg.N}</div>
-              <Odd ocg={ocg} />
+              <OddWrapper ocg={ocg} />
             </div>
           );
         })}
