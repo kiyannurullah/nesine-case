@@ -27,10 +27,6 @@ function HomePage(props) {
     <div
       onScroll={onHandleScroll}
       className="wrapper"
-      style={{
-        overflow: 'scroll',
-        height: '100vh',
-      }}
     >
       <div className="container">
         <Program

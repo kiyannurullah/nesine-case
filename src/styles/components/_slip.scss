@@ -1,0 +1,14 @@
+.slip {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  position: fixed;
+  bottom: 0;
+  color: $white;
+  right: 30px;
+  padding: 4px 10px;
+
+  span {
+    font-size: $small;
+    display: block;
+  }
+}
