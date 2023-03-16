@@ -1,5 +1,7 @@
-const Slip = () => {
-
-};
+function Slip() {
+  return (
+    <div />
+  );
+}
 
 export default Slip;

@@ -1,18 +1,30 @@
+@import 'variables';
+@import "components/program";
+@import "components/event";
+@import "components/oddHeader";
+
 html,
 body {
   padding: 0;
   margin: 0;
+  font-family: 'Inter', sans-serif;
 }
 
+.wrapper {
+  background-color: $dark;
+  height: 100vh;
+  min-height: calc(100vh - 674px);
+  overflow: scroll;
+  padding: 30px 0 60px;
+}
 .container {
+  background: $gray;
+  border-radius: 4px;
+  box-shadow: 1px 20px 30px 0 rgb(0 0 0 / 20%);
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 15px;
   width: 100%;
 }
 
-@import "components/program";
-@import "components/event";
-@import "components/oddHeader";

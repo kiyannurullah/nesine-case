@@ -1,20 +1,20 @@
-import OddHeader from "../OddHeader";
+import Event from '../Event';
+import { KG, OC } from '../../utils/config';
 
-function Program({ bulletin }) {
+function Program({ bulletin, items }) {
   return (
     <div className="program">
-      {Object.values(bulletin)?.map((item, key) => (
-        <div key={item?.C} className="program__event">
-          <div className="program__event__date">
-            {key} {item?.D} {item?.DAY} {item?.LN}
-            <span>
-              <OddHeader />
-            </span>
-          </div>
-          <div>
-            {item?.C} {item?.T} {item?.N}
-          </div>
-        </div>
+      {items.map((i, index) => (
+        <>
+          {Object.values(bulletin).filter((i, key) => key === index).map((item, key) => {
+            item.OCG['3'] = { ID: '3', N: 'H1 Maç Sonucu', OC };
+            item.OCG['4'] = { ID: '4', N: 'H2 Maç Sonucu', OC };
+            item.OCG['6'] = { ID: '5', N: 'KG Var/Yok', OC: KG };
+            return (
+              <Event item={item} index={index} />
+            );
+          })}
+        </>
       ))}
     </div>
   );

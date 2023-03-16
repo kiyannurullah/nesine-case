@@ -1,6 +1,6 @@
 import fsPromises from 'fs/promises';
 import path from 'path';
-import OddHeader from '../components/OddHeader';
+import { useState } from 'react';
 import Program from '../components/Program';
 import Slip from '../components/Slip';
 import { useProgramContext } from '../utils/context';
@@ -8,11 +8,38 @@ import { useProgramContext } from '../utils/context';
 function HomePage(props) {
   const { context } = useProgramContext();
 
+  const [items, setItems] = useState(Array.from({ length: 20 }));
+
+  const fetchMoreData = () => {
+    setTimeout(() => {
+      setItems(items.concat(Array.from({ length: 20 })));
+    }, 100);
+  };
+
+  const onHandleScroll = (e) => {
+    e.persist();
+    if (e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight) {
+      fetchMoreData();
+    }
+  };
+
   return (
-    <div className="container">
-      <OddHeader isCount />
-      <Program bulletin={props?.Events} />
-      <Slip />
+    <div
+      onScroll={onHandleScroll}
+      className="wrapper"
+      style={{
+        overflow: 'scroll',
+        height: '100vh',
+      }}
+    >
+      <div className="container">
+        <Program
+          bulletin={props?.Events}
+          items={items}
+          fetchMoreData={fetchMoreData}
+        />
+        <Slip />
+      </div>
     </div>
   );
 }
