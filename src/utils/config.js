@@ -8,7 +8,18 @@ export const OC = {
   2: { O: '-', N: 'X' },
   3: { O: '-', N: '2' },
 };
+
 export const KG = {
   1: { O: '-', N: 'Var' },
   2: { O: '-', N: 'Yok' },
 };
+
+export const Menu = [
+  'Canlı',
+  'Futbol',
+  'Basketbol',
+  'Düello',
+  'Tenis',
+  'Voleybol',
+  'Hentbol',
+];

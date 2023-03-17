@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { CouponContext } from '../../utils/context';
 
 function Odd({
-  odd, eIndex, index, eName,
+  odd, eIndex, index, eName, eId,
 }) {
   const { addCoupon } = useContext(CouponContext);
   const [isSelected, setIsSelected] = useState('');
@@ -10,6 +10,7 @@ function Odd({
   useEffect(() => {
     odd.index = `${eIndex}-${index}-${odd?.ID}`;
     odd.eName = eName;
+    odd.eId = eId;
     odd.isSelected = false;
   }, []);
 

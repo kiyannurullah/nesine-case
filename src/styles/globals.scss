@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mediaQueries';
 @import "components/program";
 @import "components/slip";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -11,11 +12,11 @@ body {
 }
 
 .wrapper {
-  background-color: $dark;
+  background-color: $blue;
   height: 100vh;
   min-height: calc(100vh - 674px);
   overflow: scroll;
-  padding: 30px 0 60px;
+  padding: 0 0 60px;
 }
 .container {
   background: $gray;
@@ -26,5 +27,10 @@ body {
   margin-right: auto;
   padding: 15px;
   width: 100%;
+
+  @media #{$desktop-sm} {
+    border-radius: 0;
+    padding: 0;
+  }
 }
 

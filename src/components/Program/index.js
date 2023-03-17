@@ -12,7 +12,7 @@ function Program({ bulletin, items }) {
             item.OCG['4'] = { ID: '4', N: 'H2 Maç Sonucu', OC };
             item.OCG['6'] = { ID: '5', N: 'KG Var/Yok', OC: KG };
             return (
-              <Event key={item?.C} item={item} index={index} />
+              <Event key={item?.C} item={item} index={index} eId={item?.C} />
             );
           })}
         </Fragment>

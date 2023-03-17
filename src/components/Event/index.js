@@ -1,7 +1,7 @@
 import { result } from '../../utils/config';
 import OddWrapper from '../OddWrapper';
 
-function Event({ item, index }) {
+function Event({ item, index, eId }) {
   return (
     <div className="program__market">
       <div className="program__event__info">
@@ -24,7 +24,12 @@ function Event({ item, index }) {
           return (
             <div key={ocgKey} className="program__market__item">
               <div className="program__market__item__title">{ocg.N}</div>
-              <OddWrapper ocg={ocg} eName={item?.N} eIndex={index} />
+              <OddWrapper
+                ocg={ocg}
+                eName={item?.N}
+                eIndex={index}
+                eId={eId}
+              />
             </div>
           );
         })}

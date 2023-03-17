@@ -47,21 +47,35 @@
     padding: 0;
     position: relative;
 
+    @media #{$desktop-sm} {
+      justify-content: start;
+      overflow-x: scroll;
+    }
+
     &__info {
+      background-color: $darkGray;
+      border-radius: 4px;
+      color: $yellow;
       font-size: $extraSmall;
       font-weight: $bold;
-      color: $red;
+      padding: 2px 4px;
     }
 
     &__id, &__date {
       align-items: center;
+      color: $darkGray;
       display: flex;
       font-size: $small;
       padding-right: 4px;
+
+      @media #{$phone} {
+        font-size: $extraSmall;
+      }
     }
 
     &__teamName {
       align-items: center;
+      color: $darkGray;
       display: flex;
       flex-grow: 1;
       font-size: $medium;
@@ -71,6 +85,16 @@
       padding-left: 4px;
       position: relative;
       width: 34px;
+
+      @media #{$desktop-sm} {
+        flex-grow: 0.7;
+        min-width: 160px;
+      }
+
+      @media #{$phone} {
+        font-size: $small;
+        min-width: 75px;
+      }
     }
 
     &__odd {
@@ -78,6 +102,7 @@
       background: $white;
       border: 1px solid rgb(209, 209, 207);
       border-radius: 4px;
+      color: $darkGray;
       cursor: pointer;
       display: grid;
       font-size: $small;
@@ -90,13 +115,17 @@
       text-align: center;
       width: 30px;
 
+      @media #{$phone} {
+        font-size: $extraSmall;
+      }
+
       span:first-child {
         font-size: $extraSmall;
       }
 
       &__selected {
-        background: $dark;
-        color: $white;
+        background: $yellow;
+        color: $dark;
       }
     }
   }
