@@ -4,15 +4,13 @@
     border-radius: 4px;
     box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     margin: 10px 0 0;
-    padding: 10px;
+    padding: 4px 10px;
 
     &__odd-wrapper {
       display: flex;
     }
 
     &__item {
-      margin-right: 6px;
-
       &:nth-child(4) {
         order: 1;
       }
@@ -33,7 +31,7 @@
       }
 
       &__title {
-        font-size: $small;
+        font-size: $extraSmall;
         font-weight: $bold;
         margin-bottom: 4px;
         text-align: center;
@@ -44,12 +42,13 @@
   &__event {
     display: flex;
     list-style: none;
+    justify-content: space-around;
     margin: 0;
     padding: 0;
     position: relative;
 
     &__info {
-      font-size: $small;
+      font-size: $extraSmall;
       font-weight: $bold;
       color: $red;
     }
@@ -57,7 +56,8 @@
     &__id, &__date {
       align-items: center;
       display: flex;
-      font-size: $medium;
+      font-size: $small;
+      padding-right: 4px;
     }
 
     &__teamName {
@@ -68,7 +68,7 @@
       font-weight: $bold;
       justify-content: space-between;
       max-width: 200px;
-      padding: 0 10px 0 12px;
+      padding-left: 4px;
       position: relative;
       width: 34px;
     }
@@ -82,13 +82,22 @@
       display: grid;
       font-size: $small;
       font-weight: $bold;
-      height: 40px;
+      height: 30px;
       justify-content: center;
       margin: 0 4px;
       padding: 0 5px;
       position: relative;
       text-align: center;
-      width: 31px;
+      width: 30px;
+
+      span:first-child {
+        font-size: $extraSmall;
+      }
+
+      &__selected {
+        background: $dark;
+        color: $white;
+      }
     }
   }
 }

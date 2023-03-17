@@ -24,7 +24,7 @@ function Event({ item, index }) {
           return (
             <div key={ocgKey} className="program__market__item">
               <div className="program__market__item__title">{ocg.N}</div>
-              <OddWrapper ocg={ocg} />
+              <OddWrapper ocg={ocg} eName={item?.N} eIndex={index} />
             </div>
           );
         })}

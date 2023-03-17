@@ -3,11 +3,8 @@ import path from 'path';
 import { useState } from 'react';
 import Program from '../components/Program';
 import Slip from '../components/Slip';
-import { useProgramContext } from '../utils/context';
 
 function HomePage(props) {
-  const { context } = useProgramContext();
-
   const [items, setItems] = useState(Array.from({ length: 20 }));
 
   const fetchMoreData = () => {

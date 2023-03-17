@@ -1,4 +1,4 @@
-import {Fragment} from "react";
+import { Fragment } from 'react';
 import Event from '../Event';
 import { KG, OC } from '../../utils/config';
 

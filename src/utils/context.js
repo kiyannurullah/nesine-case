@@ -1,21 +1,25 @@
-import { createContext, useContext } from 'react';
+import { createContext, useState } from 'react';
 
-const Context = createContext();
+export const CouponContext = createContext(null);
 
-export default function AppStore({ children }) {
-  const user = {
-    id: 1,
-    name: 'John Doe',
-    token: '3DJ39#DFLLDF58$LKDFO#O3N4OO',
+function CouponProvider({ children }) {
+  const [coupon, setCoupon] = useState([]);
+
+  const addCoupon = (value) => {
+    const checkOdd = coupon.some((item) => value.index === item.index);
+
+    if (checkOdd) {
+      setCoupon(coupon.filter((_coupon) => _coupon.index !== value.index));
+    } else {
+      setCoupon((_coupon) => [..._coupon, value]);
+    }
   };
 
   return (
-    <Context.Provider value={{ user }}>
+    <CouponContext.Provider value={{ coupon, addCoupon }}>
       {children}
-    </Context.Provider>
+    </CouponContext.Provider>
   );
 }
 
-export function useProgramContext() {
-  return useContext(Context);
-}
+export default CouponProvider;

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import AppStore from '../utils/context';
+import CouponContext from '../utils/context';
 import '../styles/globals.scss';
 
 function App({ Component, pageProps }) {
@@ -12,9 +12,9 @@ function App({ Component, pageProps }) {
         />
         <title>Nesine Case</title>
       </Head>
-      <AppStore>
+      <CouponContext>
         <Component {...pageProps} />
-      </AppStore>
+      </CouponContext>
     </>
   );
 }
