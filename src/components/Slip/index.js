@@ -17,7 +17,7 @@ function Slip() {
     <div className="slip">
       <div className="slip__header" onClick={() => setShowEvents(!showEvents)}>
         <span className={
-          showEvents && coupon.length < 1
+          showEvents || coupon.length < 1
             ? 'slip__header__arrow'
             : 'slip__header__arrow-collapse'
         }
