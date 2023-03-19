@@ -12,6 +12,11 @@ const nextConfig = {
     styledComponents: true,
     removeConsole: true,
   },
+  experimental: {
+    esmExternals: 'loose',
+    outputStandalone: true,
+    largePageDataBytes: 128 * 100000,
+  },
   optimization: {
     usedExports: true,
     minimize: true,
