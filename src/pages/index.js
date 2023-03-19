@@ -3,15 +3,14 @@ import fsPromises from 'fs/promises';
 import path from 'path';
 import Program from '../components/Program';
 import Slip from '../components/Slip';
-import { isMobile } from '../core/utils/utils';
 
 function HomePage(props) {
-  const [items, setItems] = useState(Array.from({ length: isMobile ? 15 : 30 }));
+  const [items, setItems] = useState(Array.from({ length: 20 }));
 
   const fetchMoreData = () => {
     setTimeout(() => {
-      setItems(items?.concat(Array.from({ length: isMobile ? 15 : 30 })));
-    }, 50);
+      setItems(items?.concat(Array.from({ length: 20 })));
+    }, 100);
   };
 
   const onHandleScroll = (e) => {
