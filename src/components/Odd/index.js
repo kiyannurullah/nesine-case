@@ -1,18 +1,9 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { CouponContext } from '../../utils/context';
 
-function Odd({
-  odd, eIndex, index, eName, eId,
-}) {
+function Odd({ odd }) {
   const { addCoupon } = useContext(CouponContext);
   const [isSelected, setIsSelected] = useState('');
-
-  useEffect(() => {
-    odd.index = `${eIndex}-${index}-${odd?.ID}`;
-    odd.eName = eName;
-    odd.eId = eId;
-    odd.isSelected = false;
-  }, []);
 
   const selectedOdd = (odd) => {
     setIsSelected((ctr) => (ctr
@@ -27,9 +18,9 @@ function Odd({
     <li
       className={`program__event__odd ${odd?.O !== '-' ? isSelected : ''}`}
       onClick={() => selectedOdd(odd)}
+      id={odd?.index}
     >
-      <span>{odd?.N}</span>
-      <span>{odd?.O}</span>
+      {odd?.O}
     </li>
   );
 }

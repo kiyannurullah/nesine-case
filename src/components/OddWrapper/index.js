@@ -5,16 +5,18 @@ function OddWrapper({
 }) {
   return (
     <div className="program__market__odd-wrapper">
-      {Object.values(ocg?.OC).map((odd, i) => (
-        <Odd
-          key={i}
-          odd={odd}
-          eName={eName}
-          eIndex={eIndex}
-          index={i}
-          eId={eId}
-        />
-      ))}
+      {Object.values(ocg?.OC).map((odd, i) => {
+        odd.index = `${eIndex}-${i}-${odd?.ID}`;
+        odd.eName = eName;
+        odd.eId = eId;
+        odd.isSelected = false;
+        return(
+            <Odd
+                key={i}
+                odd={odd}
+            />
+        )
+      })}
     </div>
   );
 }
