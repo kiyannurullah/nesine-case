@@ -29,7 +29,6 @@
     &__arrow {
       transition-duration: 0.4s;
       transition-property: transform;
-      transform: rotate(270deg);
 
       @media #{$phone} {
         font-size: $extraSmall;
@@ -75,7 +74,7 @@
     overflow-y: scroll;
 
     @media #{$phone} {
-      max-height: 200px;
+      max-height: 100px;
     }
 
     &__item {

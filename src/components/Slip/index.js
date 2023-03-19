@@ -1,6 +1,5 @@
 import { useContext, useState } from 'react';
-import { CouponContext } from '../../../core/context/context';
-import { generateRandomId } from '../../../core/utils/utils';
+import { CouponContext } from '../../core/context/context';
 
 function Slip() {
   const { coupon } = useContext(CouponContext);
@@ -12,7 +11,11 @@ function Slip() {
     return [odd]?.reduce((a, b) => a * b);
   }, 0);
 
-  const total = totalRate.reduce((a, b) => a * b, 1).toFixed(2);
+  const total = parseFloat(totalRate.reduce((a, b) => a * b, 1));
+  const totalPrice = total <= 2000000 ? coupon?.length < 1 ? 0.00 : (total).toLocaleString(
+    undefined,
+    { minimumFractionDigits: 2, maximumFractionDigits: 2 },
+  ) : (2000000).toLocaleString();
 
   return (
     <div className="slip">
@@ -43,10 +46,11 @@ function Slip() {
       {showEvents
             && (
             <div className="slip__events">
-              {coupon.map((event) => (
-                <div key={generateRandomId(8)} className="slip__events__item">
+              {coupon.map((event, key) => (
+                <div key={key} className="slip__events__item">
                   <span className="slip__events__item__name">
                     {event?.eId}
+                    {' - '}
                     {event?.eName}
                   </span>
                   <span className="slip__events__item__odd">
@@ -64,7 +68,7 @@ function Slip() {
       <span className="slip__total">
         Toplam Oran:
         {' '}
-        {coupon?.length < 1 ? '0.00' : total}
+        {totalPrice}
       </span>
     </div>
   );

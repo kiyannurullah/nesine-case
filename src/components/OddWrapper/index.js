@@ -1,5 +1,5 @@
 import Odd from '../Odd';
-import { eventData } from '../../../core/utils/utils';
+import { eventData } from '../../core/utils/utils';
 
 function OddWrapper({
   ocg, eName, eIndex, eId,

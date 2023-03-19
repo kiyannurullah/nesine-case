@@ -1,4 +1,11 @@
 .program {
+  padding: 15px;
+
+  @media #{$desktop-sm} {
+    border-radius: 0;
+    padding: 0;
+  }
+
   &__market {
     border: 1px solid $gray;
     margin: 4px 0;
@@ -67,6 +74,7 @@
       color: $darkGray;
       display: flex;
       font-size: $small;
+      font-weight: $normal;
       padding-right: 4px;
 
       @media #{$phone} {
@@ -81,7 +89,7 @@
       flex-grow: 1;
       font-size: $small;
       font-weight: $bold;
-      justify-content: space-between;
+      justify-content: flex-start;
       max-width: 200px;
       padding-left: 4px;
       position: relative;
@@ -98,6 +106,19 @@
       }
     }
 
+    &__mbs {
+      align-self: center;
+      background-color: $yellow;
+      border-radius: 2px;
+      box-shadow: rgb(0 0 0 / 10%) 0 4px 12px;
+      cursor: default;
+      font-size: $extraSmall;
+      height: 13px;
+      margin-left: 4px;
+      text-align: center;
+      width: 15px;
+    }
+
     &__odd {
       align-items: center;
       align-content: center;
@@ -107,9 +128,9 @@
       color: $darkGray;
       cursor: pointer;
       display: grid;
-      font-size: $extraSmall;
+      font-size: $small;
       font-weight: $bold;
-      height: 26px;
+      height: 28px;
       justify-content: center;
       margin: 0 4px;
       padding: 0 5px;
@@ -117,12 +138,8 @@
       text-align: center;
       width: 28px;
 
-      @media #{$phone} {
-        font-size: $extraSmall;
-      }
-
       span:first-child {
-        font-size: 8px;
+        font-size: $spanSize;
       }
 
       &__selected {

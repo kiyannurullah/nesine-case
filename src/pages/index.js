@@ -5,11 +5,11 @@ import Program from '../components/Program';
 import Slip from '../components/Slip';
 
 function HomePage(props) {
-  const [items, setItems] = useState(Array.from({ length: 20 }));
+  const [items, setItems] = useState(Array.from({ length: 50 }));
 
   const fetchMoreData = () => {
     setTimeout(() => {
-      setItems(items?.concat(Array.from({ length: 20 })));
+      setItems(items?.concat(Array.from({ length: 50 })));
     }, 100);
   };
 
