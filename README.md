@@ -21,4 +21,4 @@ next.config.js içinde inceleyebilirsiniz.
 
 ### Kullanımlar:
 - Slip komponentini açılır kapanır şekilde sağ alta konumlandırdım.
-- Eventleri, mobilde sağa doğru scroll yaparak ilerleyebilirsiniz.
+- Eventleri, mobilde sağa doğru scroll yaparak ilerletebilirsiniz.
