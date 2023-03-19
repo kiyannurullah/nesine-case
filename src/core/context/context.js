@@ -35,7 +35,7 @@ function CouponProvider({ children }) {
   const couponData = useMemo(() => ({ coupon, addCoupon }), [coupon]);
 
   return (
-    <CouponContext.Provider value={couponData}>
+    <CouponContext.Provider value={{ coupon, addCoupon }}>
       {children}
     </CouponContext.Provider>
   );

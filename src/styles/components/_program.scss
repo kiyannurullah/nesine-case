@@ -82,6 +82,20 @@
       }
     }
 
+    &__id {
+      @media #{$phone} {
+        font-weight: $light;
+        margin-bottom: 16px;
+      }
+    }
+
+    &__date {
+      @media #{$phone} {
+        position: absolute;
+        top: 23px;
+      }
+    }
+
     &__teamName {
       align-items: center;
       color: $darkGray;
@@ -102,7 +116,7 @@
 
       @media #{$phone} {
         font-size: $small;
-        min-width: 75px;
+        min-width: 170px;
       }
     }
 
@@ -115,6 +129,9 @@
       font-size: $extraSmall;
       height: 13px;
       margin-left: 4px;
+      position: absolute;
+      right: 0;
+      top: 25px;
       text-align: center;
       width: 15px;
     }

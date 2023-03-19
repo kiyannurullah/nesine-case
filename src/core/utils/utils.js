@@ -4,7 +4,6 @@ export const eventData = (odd, eIndex, eId, eName, i) => {
   odd.index = `${eIndex}-${i}-${odd?.ID}`;
   odd.eName = eName;
   odd.eId = eId;
-  odd.isSelected = false;
 };
 
 export const generateRandomId = (length) => {
