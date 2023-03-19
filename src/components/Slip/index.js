@@ -1,13 +1,14 @@
 import { useContext, useState } from 'react';
 import { CouponContext } from '../../../core/context/context';
+import { generateRandomId } from '../../../core/utils/utils';
 
 function Slip() {
   const { coupon } = useContext(CouponContext);
 
   const [showEvents, setShowEvents] = useState(true);
 
-  const totalRate = coupon.map((sum) => {
-    const odd = [Number(sum.O)];
+  const totalRate = coupon?.map((sum) => {
+    const odd = [Number(sum?.O)];
     return [odd]?.reduce((a, b) => a * b);
   }, 0);
 
@@ -15,7 +16,13 @@ function Slip() {
 
   return (
     <div className="slip">
-      <div className="slip__header" onClick={() => setShowEvents(!showEvents)}>
+      <div
+        className="slip__header"
+        onClick={() => setShowEvents(!showEvents)}
+        onKeyDown={() => {}}
+        role="button"
+        tabIndex={0}
+      >
         <span className={
           showEvents || coupon.length < 1
             ? 'slip__header__arrow'
@@ -37,7 +44,7 @@ function Slip() {
             && (
             <div className="slip__events">
               {coupon.map((event) => (
-                <div key={event?.eId} className="slip__events__item">
+                <div key={generateRandomId(8)} className="slip__events__item">
                   <span className="slip__events__item__name">
                     {event?.eId}
                     {event?.eName}
@@ -57,7 +64,7 @@ function Slip() {
       <span className="slip__total">
         Toplam Oran:
         {' '}
-        {coupon.length < 1 ? '0.00' : total}
+        {coupon?.length < 1 ? '0.00' : total}
       </span>
     </div>
   );

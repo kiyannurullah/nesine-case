@@ -16,11 +16,15 @@ function Odd({ odd }) {
 
   return (
     <li
+      role="button"
       className={`program__event__odd ${odd?.O !== '-' ? isSelected : ''}`}
       onClick={() => selectedOdd(odd)}
+      onKeyDown={() => {}}
       id={odd?.index}
+      tabIndex={0}
     >
-      {odd?.O}
+      <span>{odd?.N}</span>
+      <span>{odd?.O}</span>
     </li>
   );
 }

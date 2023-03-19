@@ -14,7 +14,8 @@
     "browser": true,
     "commonjs": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -30,7 +31,12 @@
   },
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prop-types": "off",
+    "no-param-reassign": 0,
+    "no-shadow": "off",
+    "no-plusplus": "off",
+    "import/no-named-as-default": 0
   },
   "plugins": []
 }

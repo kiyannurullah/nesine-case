@@ -1,23 +1,23 @@
 import { result } from '../../../core/configs/config';
 import OddWrapper from '../OddWrapper';
-import {eventDrawer} from "../../../core/utils/utils";
+import { eventDrawer, generateRandomId } from '../../../core/utils/utils';
 
 function Event({ item, index, eId }) {
   return (
     <div className="program__market">
       <div className="program__event__info">
-          {eventDrawer(index, item)}
+        {eventDrawer(index, item)}
       </div>
       <ul key={item?.C} className="program__event">
         <li className="program__event__id">{item?.C}</li>
         <li className="program__event__date">{item?.T}</li>
         <li className="program__event__teamName">{item?.N}</li>
-        {Object.values(item?.OCG).map((ocg, ocgKey) => {
-          if (ocg.N === 'Maç Sonucu') {
+        {Object.values(item?.OCG).map((ocg) => {
+          if (ocg?.N === 'Maç Sonucu') {
             ocg.OC['2'] = result;
           }
           return (
-            <div key={ocgKey} className="program__market__item">
+            <div key={generateRandomId(8)} className="program__market__item">
               <div className="program__market__item__title">{ocg.N}</div>
               <OddWrapper
                 ocg={ocg}

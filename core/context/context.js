@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useMemo, useState } from 'react';
 
 export const CouponContext = createContext(null);
 
@@ -15,8 +15,10 @@ function CouponProvider({ children }) {
     }
   };
 
+  const couponData = useMemo(() => ({ coupon, addCoupon }), [coupon]);
+
   return (
-    <CouponContext.Provider value={{ coupon, addCoupon }}>
+    <CouponContext.Provider value={couponData}>
       {children}
     </CouponContext.Provider>
   );

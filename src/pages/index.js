@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import useFetch from '../../core/hooks/useFetch';
+import fsPromises from 'fs/promises';
+import path from 'path';
 import Program from '../components/Program';
 import Slip from '../components/Slip';
 
@@ -8,7 +9,7 @@ function HomePage(props) {
 
   const fetchMoreData = () => {
     setTimeout(() => {
-      setItems(items.concat(Array.from({ length: 20 })));
+      setItems(items?.concat(Array.from({ length: 20 })));
     }, 100);
   };
 
@@ -37,10 +38,12 @@ function HomePage(props) {
 }
 
 export async function getServerSideProps() {
-  const data = '/src/assets/bulten_data.json';
+  const filePath = path.join(process.cwd(), '/src/assets/bulten_data.json');
+  const jsonData = await fsPromises.readFile(filePath);
+  const objectData = JSON.parse(jsonData);
 
   return {
-    props: useFetch(data),
+    props: objectData,
   };
 }
 

@@ -13,6 +13,7 @@ function App({ Component, pageProps }) {
         <title>Nesine Case</title>
       </Head>
       <CouponContext>
+        {/* eslint-disable react/jsx-props-no-spreading */}
         <Component {...pageProps} />
       </CouponContext>
     </>

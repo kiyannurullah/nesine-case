@@ -13,13 +13,3 @@ export const KG = {
   1: { O: '-', N: 'Var' },
   2: { O: '-', N: 'Yok' },
 };
-
-export const Menu = [
-  'Canlı',
-  'Futbol',
-  'Basketbol',
-  'Düello',
-  'Tenis',
-  'Voleybol',
-  'Hentbol',
-];
