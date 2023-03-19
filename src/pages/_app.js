@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import CouponContext from '../utils/context';
+import CouponContext from '../../core/context/context';
 import '../styles/globals.scss';
 
 function App({ Component, pageProps }) {

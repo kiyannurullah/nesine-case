@@ -1,12 +1,12 @@
 import { Fragment } from 'react';
 import Event from '../Event';
-import { KG, OC } from '../../utils/config';
+import { KG, OC } from '../../../core/configs/config';
 
 function Program({ bulletin, items }) {
   return (
     <div className="program">
       {items.map((i, index) => (
-        <Fragment key={index}>
+        <Fragment key={i.ID}>
           {Object.values(bulletin).filter((i, key) => key === index).map((item, key) => {
             item.OCG['3'] = { ID: '3', N: 'H1 Maç Sonucu', OC };
             item.OCG['4'] = { ID: '4', N: 'H2 Maç Sonucu', OC };

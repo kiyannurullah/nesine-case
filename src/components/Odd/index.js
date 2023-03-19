@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { CouponContext } from '../../utils/context';
+import { CouponContext } from '../../../core/context/context';
 
 function Odd({ odd }) {
   const { addCoupon } = useContext(CouponContext);

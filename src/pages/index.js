@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import fsPromises from 'fs/promises';
-import path from 'path';
+import useFetch from '../../core/hooks/useFetch';
 import Program from '../components/Program';
 import Slip from '../components/Slip';
 
@@ -38,12 +37,10 @@ function HomePage(props) {
 }
 
 export async function getServerSideProps() {
-  const filePath = path.join(process.cwd(), '/src/assets/bulten_data.json');
-  const jsonData = await fsPromises.readFile(filePath);
-  const objectData = JSON.parse(jsonData);
+  const data = '/src/assets/bulten_data.json';
 
   return {
-    props: objectData,
+    props: useFetch(data),
   };
 }
 

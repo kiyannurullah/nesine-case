@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { CouponContext } from '../../utils/context';
+import { CouponContext } from '../../../core/context/context';
 
 function Slip() {
   const { coupon } = useContext(CouponContext);
@@ -36,10 +36,11 @@ function Slip() {
       {showEvents
             && (
             <div className="slip__events">
-              {coupon.map((event, key) => (
-                <div key={key} className="slip__events__item">
+              {coupon.map((event) => (
+                <div key={event?.eId} className="slip__events__item">
                   <span className="slip__events__item__name">
-                    {event?.eId} {event?.eName}
+                    {event?.eId}
+                    {event?.eName}
                   </span>
                   <span className="slip__events__item__odd">
                     Oran:

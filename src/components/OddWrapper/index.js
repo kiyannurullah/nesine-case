@@ -1,4 +1,5 @@
 import Odd from '../Odd';
+import {eventData} from "../../../core/utils/utils";
 
 function OddWrapper({
   ocg, eName, eIndex, eId,
@@ -6,10 +7,7 @@ function OddWrapper({
   return (
     <div className="program__market__odd-wrapper">
       {Object.values(ocg?.OC).map((odd, i) => {
-        odd.index = `${eIndex}-${i}-${odd?.ID}`;
-        odd.eName = eName;
-        odd.eId = eId;
-        odd.isSelected = false;
+        eventData(odd, eIndex, eId, eName, i)
         return(
             <Odd
                 key={i}

@@ -1,17 +1,12 @@
-import { result } from '../../utils/config';
+import { result } from '../../../core/configs/config';
 import OddWrapper from '../OddWrapper';
+import {eventDrawer} from "../../../core/utils/utils";
 
 function Event({ item, index, eId }) {
   return (
     <div className="program__market">
       <div className="program__event__info">
-        {index}
-        {' '}
-        {item?.D}
-        {' '}
-        {item?.DAY}
-        {' '}
-        {item?.LN}
+          {eventDrawer(index, item)}
       </div>
       <ul key={item?.C} className="program__event">
         <li className="program__event__id">{item?.C}</li>
